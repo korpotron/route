@@ -21,21 +21,17 @@ struct RootView: View {
                 }
                 .tag(Child.bag)
         }
-        .route(for: BagLink.self) { _ in
+        .route(for: BagLink.self) {
             active = .bag
-            return .done
         }
-        .route(for: ProductsLink.self) { _ in
+        .route(for: ProductsLink.self) {
             active = .products
-            return .done
         }
         .route(for: ProductDetailsLink.self) { link in
             active = .products
-            return .done
         }
-        .route(for: BagInfoLink.self) { _ in
+        .route(for: BagInfoLink.self) {
             active = .bag
-            return .done
         }
     }
 }

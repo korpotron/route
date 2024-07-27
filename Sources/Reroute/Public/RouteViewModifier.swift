@@ -19,3 +19,25 @@ public extension View {
         modifier(RouteViewModifier(block: block))
     }
 }
+
+public extension View {
+    @inlinable func route<T: Hashable>(for data: T.Type, block: @escaping (T) -> Void) -> some View {
+        route(for: data) { value in
+            block(value)
+            return .done
+        }
+    }
+
+    @inlinable func route<T: Hashable>(for data: T.Type, block: @escaping () -> RouteResult) -> some View {
+        route(for: data) { _ in
+            block()
+        }
+    }
+
+    @inlinable func route<T: Hashable>(for data: T.Type, block: @escaping () -> Void) -> some View {
+        route(for: data) { _ in
+            block()
+            return .done
+        }
+    }
+}
