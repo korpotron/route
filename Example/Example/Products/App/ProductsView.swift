@@ -12,6 +12,15 @@ struct ProductsView: View {
                     ProductDetailsView(product: link.product)
                 }
         }
+        .route(for: BagInfoLink.self) {
+            path.removeLast(path.count)
+        }
+        .route(for: BagLink.self) {
+            path.removeLast(path.count)
+        }
+        .route(for: ProductsLink.self) {
+            path.removeLast(path.count)
+        }
         .route(for: ProductDetailsLink.self) { link in
             let product = repository.products.first(where: { $0.id == link.product.id }) ?? link.product
             path.append(ProductDetailsLink(product: product))
