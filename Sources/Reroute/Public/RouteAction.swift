@@ -2,10 +2,9 @@ import SwiftUI
 
 @MainActor
 public struct RouteAction {
-    @Environment(\.store)
-    private var store
+    let block: (any Hashable) -> Void
 
-    public func callAsFunction(_ data: any Hashable) {
-        store.data = data
+    public func callAsFunction(_ link: any Hashable) {
+        block(link)
     }
 }

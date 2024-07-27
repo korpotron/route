@@ -8,10 +8,8 @@ struct RouteViewModifier<T: Hashable>: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onReceive(store.$data) { value in
-                if let value = value as? T {
-                    store.data = block(value).perform()
-                }
+            .onReceive(store.$link.compactMap { $0 as? T }) { value in
+                store.link = block(value).perform()
             }
     }
 }

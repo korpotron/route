@@ -1,6 +1,6 @@
 import SwiftUI
 
-private struct StoreEnvironmentKey: EnvironmentKey {
+struct StoreEnvironmentKey: EnvironmentKey {
     @MainActor
     static var defaultValue = Store()
 }

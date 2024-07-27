@@ -1,0 +1,19 @@
+import SwiftUI
+
+struct ProductDetailsView: View {
+    let product: Product
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading) {
+                Text(verbatim: product.name)
+                Text(verbatim: String(product.id))
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .padding()
+        .navigationTitle(product.name)
+    }
+}
