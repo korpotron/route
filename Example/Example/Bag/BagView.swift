@@ -1,9 +1,12 @@
-import SwiftUI
 import Reroute
+import SwiftUI
 
 struct BagView: View {
     @Environment(\.route)
     var route
+
+    @Environment(\.openURL)
+    var openURL
 
     @State var show = false
 
@@ -17,6 +20,9 @@ struct BagView: View {
                     }
                     Button("product/2") {
                         route(ProductDetailsLink(product: Product(id: 2, name: "XXX")))
+                    }
+                    Button("url /products") {
+                        openURL(URL(string: "https://example.org/products")!)
                     }
                 }
             }

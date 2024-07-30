@@ -1,9 +1,9 @@
 import SwiftUI
+import Reroute
 
 struct ProductsView: View {
     @State var path = NavigationPath()
     @ObservedObject var repository = ProductRepository()
-
 
     var body: some View {
         NavigationStack(path: $path) {

@@ -28,13 +28,13 @@ public extension View {
         }
     }
 
-    @inlinable func route<T: Hashable>(for data: T.Type, block: @escaping () -> RouteResult) -> some View {
+    @inlinable func route(for data: (some Hashable).Type, block: @escaping () -> RouteResult) -> some View {
         route(for: data) { _ in
             block()
         }
     }
 
-    @inlinable func route<T: Hashable>(for data: T.Type, block: @escaping () -> Void) -> some View {
+    @inlinable func route(for data: (some Hashable).Type, block: @escaping () -> Void) -> some View {
         route(for: data) { _ in
             block()
             return .done

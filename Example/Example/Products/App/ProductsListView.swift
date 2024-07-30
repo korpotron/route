@@ -1,5 +1,5 @@
-import SwiftUI
 import Reroute
+import SwiftUI
 
 struct ProductsListView: View {
     @EnvironmentObject
@@ -7,6 +7,9 @@ struct ProductsListView: View {
 
     @Environment(\.route)
     var route
+
+    @Environment(\.openURL)
+    var openURL
 
     var body: some View {
         VStack {
@@ -28,6 +31,9 @@ struct ProductsListView: View {
                 }
                 Button("bag info") {
                     route(BagInfoLink())
+                }
+                Button("url /bag") {
+                    openURL(URL(string: "https://example.org/bag")!)
                 }
             }
         }

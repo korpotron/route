@@ -27,7 +27,7 @@ struct RootView: View {
         .route(for: ProductsLink.self) {
             active = .products
         }
-        .route(for: ProductDetailsLink.self) { link in
+        .route(for: ProductDetailsLink.self) { _ in
             active = .products
         }
         .route(for: BagInfoLink.self) {
