@@ -40,4 +40,10 @@ public extension View {
             return .done
         }
     }
+
+    @inlinable func route(_ a: (some Hashable).Type, _ b: (some Hashable).Type, block: @escaping () -> Void) -> some View {
+        self
+            .route(for: a, block: block)
+            .route(for: b, block: block)
+    }
 }
