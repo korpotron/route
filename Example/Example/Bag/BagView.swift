@@ -31,7 +31,7 @@ struct BagView: View {
             }
             .navigationTitle("Bag")
         }
-        .route(for: BagInfoLink.self) {
+        .route(BagInfoLink.self) {
             show = true
         }
     }
