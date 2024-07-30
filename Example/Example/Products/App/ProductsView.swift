@@ -1,5 +1,5 @@
 import SwiftUI
-import Reroute
+import Route
 
 struct ProductsView: View {
     @State var path = NavigationPath()

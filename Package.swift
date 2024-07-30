@@ -3,26 +3,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "Reroute",
+    name: "Route",
     platforms: [
         .iOS(.v16),
     ],
     products: [
         .library(
-            name: "Reroute",
+            name: "Route",
             targets: [
-                "Reroute",
+                "Route",
             ]
         ),
     ],
     targets: [
         .target(
-            name: "Reroute"
+            name: "Route"
         ),
         .testTarget(
-            name: "RerouteTests",
+            name: "RouteTests",
             dependencies: [
-                "Reroute",
+                "Route",
             ]
         ),
     ]

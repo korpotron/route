@@ -18,10 +18,11 @@
 		2D1D02452C54852D00A1DE93 /* BagLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1D02442C54852D00A1DE93 /* BagLink.swift */; };
 		2D1D02492C54859600A1DE93 /* ProductsLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1D02482C54859600A1DE93 /* ProductsLink.swift */; };
 		2D218DAC2C548F8E0030A0EE /* BagInfoLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D218DAB2C548F8E0030A0EE /* BagInfoLink.swift */; };
+		2D8487F42C59417B007AADA5 /* route in Resources */ = {isa = PBXBuildFile; fileRef = 2D8487F32C59417A007AADA5 /* route */; };
+		2D8487F62C5941A0007AADA5 /* Route in Frameworks */ = {isa = PBXBuildFile; productRef = 2D8487F52C5941A0007AADA5 /* Route */; };
 		2DDAD4D32C547D4300DFF03F /* ExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDAD4D22C547D4300DFF03F /* ExampleApp.swift */; };
 		2DDAD4D52C547D4300DFF03F /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDAD4D42C547D4300DFF03F /* RootView.swift */; };
 		2DDAD4D72C547D4400DFF03F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DDAD4D62C547D4400DFF03F /* Assets.xcassets */; };
-		2DDAD4E72C547D9A00DFF03F /* Reroute in Frameworks */ = {isa = PBXBuildFile; productRef = 2DDAD4E62C547D9A00DFF03F /* Reroute */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,11 +37,11 @@
 		2D1D02442C54852D00A1DE93 /* BagLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagLink.swift; sourceTree = "<group>"; };
 		2D1D02482C54859600A1DE93 /* ProductsLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsLink.swift; sourceTree = "<group>"; };
 		2D218DAB2C548F8E0030A0EE /* BagInfoLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagInfoLink.swift; sourceTree = "<group>"; };
+		2D8487F32C59417A007AADA5 /* route */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = route; path = ..; sourceTree = "<group>"; };
 		2DDAD4CF2C547D4300DFF03F /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DDAD4D22C547D4300DFF03F /* ExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleApp.swift; sourceTree = "<group>"; };
 		2DDAD4D42C547D4300DFF03F /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2DDAD4D62C547D4400DFF03F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2DDAD4E22C547D8B00DFF03F /* reroute */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = reroute; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DDAD4E72C547D9A00DFF03F /* Reroute in Frameworks */,
+				2D8487F62C5941A0007AADA5 /* Route in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,7 +115,7 @@
 		2DDAD4C62C547D4300DFF03F = {
 			isa = PBXGroup;
 			children = (
-				2DDAD4E22C547D8B00DFF03F /* reroute */,
+				2D8487F32C59417A007AADA5 /* route */,
 				2DDAD4D12C547D4300DFF03F /* Example */,
 				2DDAD4D02C547D4300DFF03F /* Products */,
 				2DDAD4E52C547D9A00DFF03F /* Frameworks */,
@@ -167,7 +168,7 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				2DDAD4E62C547D9A00DFF03F /* Reroute */,
+				2D8487F52C5941A0007AADA5 /* Route */,
 			);
 			productName = Example;
 			productReference = 2DDAD4CF2C547D4300DFF03F /* Example.app */;
@@ -211,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D8487F42C59417B007AADA5 /* route in Resources */,
 				2DDAD4D72C547D4400DFF03F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,11 +449,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2DDAD4E32C547D9400DFF03F /* Reroute */ = {
+		2D8487F52C5941A0007AADA5 /* Route */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Reroute;
+			productName = Route;
 		};
-		2DDAD4E62C547D9A00DFF03F /* Reroute */ = {
+		2DDAD4E32C547D9400DFF03F /* Reroute */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Reroute;
 		};
