@@ -12,13 +12,7 @@ struct ProductsView: View {
                     ProductDetailsView(product: link.product)
                 }
         }
-        .route(BagInfoLink.self) {
-            path.removeLast(path.count)
-        }
-        .route(BagLink.self) {
-            path.removeLast(path.count)
-        }
-        .route(ProductsLink.self) {
+        .route(BagInfoLink.self, BagLink.self, ProductsLink.self) {
             path.removeLast(path.count)
         }
         .route(ProductDetailsLink.self) { link in

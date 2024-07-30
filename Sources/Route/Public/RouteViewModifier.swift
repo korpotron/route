@@ -46,4 +46,11 @@ public extension View {
             .route(a, block: block)
             .route(b, block: block)
     }
+
+    @inlinable func route(_ a: (some Hashable).Type, _ b: (some Hashable).Type, _ c: (some Hashable).Type, block: @escaping () -> Void) -> some View {
+        self
+            .route(a, block: block)
+            .route(b, block: block)
+            .route(c, block: block)
+    }
 }
