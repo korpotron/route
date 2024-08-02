@@ -1,4 +1,5 @@
 import SwiftUI
+import Route
 
 @main
 struct ExampleApp: App {
@@ -9,6 +10,7 @@ struct ExampleApp: App {
         WindowGroup {
             RootView()
                 .environment(\.openURL, OpenURLAction(handler: deeplink(url:)))
+                .inspect()
         }
     }
 
