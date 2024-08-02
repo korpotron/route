@@ -1,3 +1,3 @@
 import Foundation
 
-struct BagInfoLink: Hashable {}
+struct BagInfoLink {}

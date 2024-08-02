@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RootView: View {
-    enum Child: Hashable {
+    enum Child {
         case products
         case bag
     }

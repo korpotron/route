@@ -1,15 +1,13 @@
 import Foundation
 
 public enum RouteResult {
-    case next(any Hashable)
+    case next(Any)
     case done
 
-    func perform() -> (any Hashable)? {
+    func perform() -> Any? {
         switch self {
-        case let .next(hashable):
-            hashable
-        case .done:
-            nil
+        case let .next(link): link
+        case .done: nil
         }
     }
 }

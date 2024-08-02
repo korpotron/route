@@ -1,5 +1,5 @@
-import SwiftUI
 import Route
+import SwiftUI
 
 struct ProductsView: View {
     enum Child: Hashable {

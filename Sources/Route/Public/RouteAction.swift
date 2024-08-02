@@ -2,9 +2,9 @@ import SwiftUI
 
 @MainActor
 public struct RouteAction {
-    let block: (any Hashable) -> Void
+    let block: (Any) -> Void
 
-    public func callAsFunction(_ link: any Hashable) {
+    public func callAsFunction(_ link: Any) {
         block(link)
     }
 }
