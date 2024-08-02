@@ -1,6 +1,5 @@
 import Combine
 
-@MainActor
 struct Store {
     private let subject: CurrentValueSubject<Any?, Never> = .init(nil)
 

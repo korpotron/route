@@ -1,6 +1,5 @@
 import SwiftUI
 
-@MainActor
 public struct RouteAction {
     let block: (Any) -> Void
 
