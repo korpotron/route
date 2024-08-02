@@ -1,5 +1,5 @@
-import Foundation
+import Route
 
-struct ProductDetailsLink: Hashable {
+struct ProductDetailsLink: Hashable, RouteLink {
     let product: Product.ID
 }

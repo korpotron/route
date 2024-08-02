@@ -1,3 +1,3 @@
-import Foundation
+import Route
 
-struct BagLink {}
+struct BagLink: RouteLink {}

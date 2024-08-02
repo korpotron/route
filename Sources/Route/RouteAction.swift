@@ -1,7 +1,7 @@
 import SwiftUI
 
 public struct RouteAction {
-    let block: (Any) -> Void
+    let block: (RouteLink) -> Void
 
     init(for store: Store) {
         block = { link in
@@ -9,16 +9,18 @@ public struct RouteAction {
         }
     }
 
-    public func callAsFunction(_ link: Any) {
+    public func callAsFunction(_ link: RouteLink) {
         block(link)
     }
 
     public struct Result {
-        let perform: () -> Any?
+        let perform: () -> RouteLink?
 
-        public static let handled = Self {}
+        public static let handled = Self {
+            nil
+        }
 
-        public static func redirected(to link: Any) -> Self {
+        public static func redirected(to link: RouteLink) -> Self {
             Self {
                 link
             }
