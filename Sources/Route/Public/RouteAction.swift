@@ -6,7 +6,7 @@ public struct RouteAction {
 
     init(for store: Store) {
         block = { link in
-            store.link = link
+            store.send(link)
         }
     }
 

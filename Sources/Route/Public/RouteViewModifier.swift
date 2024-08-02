@@ -8,9 +8,9 @@ struct RouteViewModifier<T>: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onReceive(store.$link.compactMap { $0 as? T }) { value in
+            .onReceive(store.link(of: T.self)) { value in
                 let next = block(value).perform()
-                store.link = next
+                store.send(next)
             }
     }
 }
