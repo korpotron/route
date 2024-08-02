@@ -9,19 +9,25 @@ struct ProductsView: View {
         NavigationStack(path: $path) {
             ProductsListView()
                 .navigationDestination(for: ProductDetailsLink.self) { link in
-                    ProductDetailsView(product: link.product)
+                    view(for: link.product)
                 }
         }
         .route(BagInfoLink.self, BagLink.self, ProductsLink.self) {
             path.removeLast(path.count)
         }
         .route(ProductDetailsLink.self) { link in
-            let product = repository.products.first(where: { $0.id == link.product.id }) ?? link.product
-            path.append(ProductDetailsLink(product: product))
-
+            path.append(ProductDetailsLink(product: link.product))
             return .done
         }
         .environmentObject(repository)
+    }
+
+    @ViewBuilder func view(for id: Product.ID) -> some View {
+        if let product = repository.find(by: id){
+            ProductDetailsView(product: product)
+        } else {
+            ProductNotFoundView()
+        }
     }
 }
 

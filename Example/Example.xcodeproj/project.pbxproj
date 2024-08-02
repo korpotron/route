@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D01AA702C5D259D00C04D58 /* ProductNotFoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D01AA6F2C5D259C00C04D58 /* ProductNotFoundView.swift */; };
 		2D1D02312C547FAF00A1DE93 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1D02302C547FAF00A1DE93 /* ProductsView.swift */; };
 		2D1D02332C547FF500A1DE93 /* BagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1D02322C547FF500A1DE93 /* BagView.swift */; };
 		2D1D02352C54828800A1DE93 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1D02342C54828800A1DE93 /* ProductDetailsView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D01AA6F2C5D259C00C04D58 /* ProductNotFoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNotFoundView.swift; sourceTree = "<group>"; };
 		2D1D02302C547FAF00A1DE93 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		2D1D02322C547FF500A1DE93 /* BagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagView.swift; sourceTree = "<group>"; };
 		2D1D02342C54828800A1DE93 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				2D1D02302C547FAF00A1DE93 /* ProductsView.swift */,
+				2D01AA6F2C5D259C00C04D58 /* ProductNotFoundView.swift */,
 				2D1D02362C54829B00A1DE93 /* ProductsListView.swift */,
 				2D1D02342C54828800A1DE93 /* ProductDetailsView.swift */,
 			);
@@ -227,6 +230,7 @@
 				2D1D02452C54852D00A1DE93 /* BagLink.swift in Sources */,
 				2D1D02392C5482B100A1DE93 /* ProductDetailsLink.swift in Sources */,
 				2D1D023B2C5482C500A1DE93 /* Product.swift in Sources */,
+				2D01AA702C5D259D00C04D58 /* ProductNotFoundView.swift in Sources */,
 				2D1D02492C54859600A1DE93 /* ProductsLink.swift in Sources */,
 				2D1D023D2C5482D300A1DE93 /* ProductRepository.swift in Sources */,
 				2DDAD4D52C547D4300DFF03F /* RootView.swift in Sources */,

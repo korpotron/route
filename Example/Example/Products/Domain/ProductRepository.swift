@@ -9,4 +9,8 @@ final class ProductRepository: ObservableObject {
             Product(id: 2, name: "Bar"),
         ]
     }
+
+    func find(by id: Product.ID) -> Product? {
+        products.first { $0.id == id }
+    }
 }

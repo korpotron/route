@@ -18,8 +18,14 @@ struct BagView: View {
                     Button("products") {
                         route(ProductsLink())
                     }
+                    Button("product/1") {
+                        route(ProductDetailsLink(product: 1))
+                    }
                     Button("product/2") {
-                        route(ProductDetailsLink(product: Product(id: 2, name: "XXX")))
+                        route(ProductDetailsLink(product: 2))
+                    }
+                    Button("product/3") {
+                        route(ProductDetailsLink(product: 4))
                     }
                     Button("url /products") {
                         openURL(URL(string: "https://example.org/products")!)
