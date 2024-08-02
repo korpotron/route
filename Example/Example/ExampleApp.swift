@@ -1,5 +1,5 @@
-import SwiftUI
 import Route
+import SwiftUI
 
 @main
 struct ExampleApp: App {

@@ -15,7 +15,7 @@ struct ProductsListView: View {
         VStack {
             List {
                 ForEach(repository.products) { product in
-                    NavigationLink(value: ProductDetailsLink(product: product.id)) {
+                    NavigationLink(value: ProductsListChild.details(product.id)) {
                         VStack(alignment: .leading) {
                             Text(verbatim: product.name)
                             Text(verbatim: String(product.id.value))

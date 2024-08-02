@@ -10,7 +10,7 @@ public extension View {
     @inlinable func route<T: RouteLink>(_ data: T.Type, block: @escaping (T) -> Void) -> some View {
         route(data) { value in
             block(value)
-            return .handled
+            return .done
         }
     }
 
@@ -23,7 +23,7 @@ public extension View {
     @inlinable func route(_ data: (some RouteLink).Type, block: @escaping () -> Void) -> some View {
         route(data) { _ in
             block()
-            return .handled
+            return .done
         }
     }
 

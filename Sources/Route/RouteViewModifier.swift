@@ -8,11 +8,9 @@ struct RouteViewModifier<T: RouteLink>: ViewModifier {
 
     func body(content: Content) -> some View {
         content
-            .onAppear {
-                store.register(block)
-            }
-            .onDisappear {
-                store.unregister(block)
+            .onReceive(store.link(of: T.self)) { value in
+                let result = block(value)
+                store.send(result.next)
             }
     }
 }

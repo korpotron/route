@@ -2,17 +2,13 @@ import Route
 import SwiftUI
 
 struct ProductsView: View {
-    enum Child: Hashable {
-        case details(Product.ID)
-    }
-
-    @State var path: [Child] = []
+    @State var path: [ProductsListChild] = []
     @ObservedObject var repository = ProductRepository()
 
     var body: some View {
         NavigationStack(path: $path) {
             ProductsListView()
-                .navigationDestination(for: Child.self, destination: view(for:))
+                .navigationDestination(for: ProductsListChild.self, destination: view(for:))
         }
         .route(BagInfoLink.self, BagLink.self, ProductsLink.self) {
             path = []
@@ -21,12 +17,12 @@ struct ProductsView: View {
             path = [.details(link.product)]
         }
         .route(ProductRedirectToDetailsLink.self) { link in
-            return .redirected(to: ProductDetailsLink(product: link.product))
+            .next(ProductDetailsLink(product: link.product))
         }
         .environmentObject(repository)
     }
 
-    @ViewBuilder func view(for child: Child) -> some View {
+    @ViewBuilder func view(for child: ProductsListChild) -> some View {
         switch child {
         case let .details(id):
             view(for: id)
@@ -34,7 +30,7 @@ struct ProductsView: View {
     }
 
     @ViewBuilder func view(for id: Product.ID) -> some View {
-        if let product = repository.find(by: id){
+        if let product = repository.find(by: id) {
             ProductDetailsView(product: product)
         } else {
             ProductNotFoundView()
