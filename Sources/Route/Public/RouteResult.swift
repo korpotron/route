@@ -1,13 +1,15 @@
 import Foundation
 
-public enum RouteResult {
-    case next(Any)
-    case done
+public struct RouteResult {
+    let perform: () -> Any?
+}
 
-    func perform() -> Any? {
-        switch self {
-        case let .next(link): link
-        case .done: nil
+public extension RouteResult {
+    static let handled = Self {}
+
+    static func redirected(to link: Any) -> Self {
+        Self {
+            link
         }
     }
 }

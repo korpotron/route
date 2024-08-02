@@ -9,7 +9,8 @@ struct RouteViewModifier<T>: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onReceive(store.$link.compactMap { $0 as? T }) { value in
-                store.link = block(value).perform()
+                let next = block(value).perform()
+                store.link = next
             }
     }
 }
@@ -24,7 +25,7 @@ public extension View {
     @inlinable func route<T>(_ data: T.Type, block: @escaping (T) -> Void) -> some View {
         route(data) { value in
             block(value)
-            return .done
+            return .handled
         }
     }
 
@@ -37,7 +38,7 @@ public extension View {
     @inlinable func route(_ data: (some Any).Type, block: @escaping () -> Void) -> some View {
         route(data) { _ in
             block()
-            return .done
+            return .handled
         }
     }
 

@@ -19,7 +19,7 @@ struct ProductsView: View {
         }
         .route(ProductDetailsLink.self) { link in
             path = [.details(link.product)]
-            return .done
+            return .handled
         }
         .environmentObject(repository)
     }
