@@ -11,7 +11,7 @@ struct ProductDetailsView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     Text(verbatim: product.name)
-                    Text(verbatim: String(product.id))
+                    Text(verbatim: String(product.id.value))
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }
