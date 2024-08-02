@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RouteViewModifier<T>: ViewModifier {
-    let block: (T) -> RouteResult
+    let block: (T) -> RouteAction.Result
 
     @Environment(\.store)
     private var store
@@ -16,7 +16,7 @@ struct RouteViewModifier<T>: ViewModifier {
 }
 
 public extension View {
-    func route<T>(_: T.Type, block: @escaping (T) -> RouteResult) -> some View {
+    func route<T>(_: T.Type, block: @escaping (T) -> RouteAction.Result) -> some View {
         modifier(RouteViewModifier(block: block))
     }
 }
@@ -29,7 +29,7 @@ public extension View {
         }
     }
 
-    @inlinable func route(_ data: (some Any).Type, block: @escaping () -> RouteResult) -> some View {
+    @inlinable func route(_ data: (some Any).Type, block: @escaping () -> RouteAction.Result) -> some View {
         route(data) { _ in
             block()
         }
