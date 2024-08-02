@@ -19,7 +19,9 @@ struct ProductsView: View {
         }
         .route(ProductDetailsLink.self) { link in
             path = [.details(link.product)]
-            return .handled
+        }
+        .route(ProductRedirectToDetailsLink.self) { link in
+            return .redirected(to: ProductDetailsLink(product: link.product))
         }
         .environmentObject(repository)
     }

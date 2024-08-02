@@ -25,7 +25,10 @@ struct BagView: View {
                         route(ProductDetailsLink(product: 2))
                     }
                     Button("product/3") {
-                        route(ProductDetailsLink(product: 4))
+                        route(ProductDetailsLink(product: 3))
+                    }
+                    Button("product/3 (redirect)") {
+                        route(ProductRedirectToDetailsLink(product: 3))
                     }
                     Button("url /products") {
                         openURL(URL(string: "https://example.org/products")!)

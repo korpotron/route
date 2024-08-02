@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RouteActionEnvironmentKey: EnvironmentKey {
-    static let defaultValue = RouteAction(for: StoreEnvironmentKey.defaultValue)
+    static let defaultValue = RouteAction(store: StoreEnvironmentKey.defaultValue)
 }
 
 public extension EnvironmentValues {

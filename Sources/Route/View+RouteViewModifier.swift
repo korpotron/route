@@ -1,7 +1,7 @@
 import SwiftUI
 
 public extension View {
-    func route<T: RouteLink>(_: T.Type, block: @escaping (T) -> RouteAction.Result) -> some View {
+    func route<T: RouteLink>(_: T.Type, block: @escaping (T) -> RouteResult) -> some View {
         modifier(RouteViewModifier(block: block))
     }
 }
@@ -14,7 +14,7 @@ public extension View {
         }
     }
 
-    @inlinable func route(_ data: (some RouteLink).Type, block: @escaping () -> RouteAction.Result) -> some View {
+    @inlinable func route(_ data: (some RouteLink).Type, block: @escaping () -> RouteResult) -> some View {
         route(data) { _ in
             block()
         }

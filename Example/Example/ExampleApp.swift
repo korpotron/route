@@ -32,7 +32,7 @@ struct ExampleApp: App {
             route(BagLink())
             return .handled
         default:
-            return .systemAction
+            return .discarded
         }
     }
 }
