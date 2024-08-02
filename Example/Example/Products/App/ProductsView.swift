@@ -2,24 +2,33 @@ import SwiftUI
 import Route
 
 struct ProductsView: View {
-    @State var path = NavigationPath()
+    enum Child: Hashable {
+        case details(Product.ID)
+    }
+
+    @State var path: [Child] = []
     @ObservedObject var repository = ProductRepository()
 
     var body: some View {
         NavigationStack(path: $path) {
             ProductsListView()
-                .navigationDestination(for: ProductDetailsLink.self) { link in
-                    view(for: link.product)
-                }
+                .navigationDestination(for: Child.self, destination: view(for:))
         }
         .route(BagInfoLink.self, BagLink.self, ProductsLink.self) {
             path.removeLast(path.count)
         }
         .route(ProductDetailsLink.self) { link in
-            path.append(ProductDetailsLink(product: link.product))
+            path.append(.details(link.product))
             return .done
         }
         .environmentObject(repository)
+    }
+
+    @ViewBuilder func view(for child: Child) -> some View {
+        switch child {
+        case let .details(id):
+            view(for: id)
+        }
     }
 
     @ViewBuilder func view(for id: Product.ID) -> some View {
