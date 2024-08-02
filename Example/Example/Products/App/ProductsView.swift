@@ -15,10 +15,10 @@ struct ProductsView: View {
                 .navigationDestination(for: Child.self, destination: view(for:))
         }
         .route(BagInfoLink.self, BagLink.self, ProductsLink.self) {
-            path.removeLast(path.count)
+            path = []
         }
         .route(ProductDetailsLink.self) { link in
-            path.append(.details(link.product))
+            path = [.details(link.product)]
             return .done
         }
         .environmentObject(repository)
