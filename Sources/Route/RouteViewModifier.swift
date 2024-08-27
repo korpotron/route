@@ -13,6 +13,11 @@ struct RouteViewModifier<T: RouteLink>: ViewModifier {
 
     func handle(value: T) {
         let result = block(value)
-        store.send(result.next)
+
+        for next in result.value {
+            store.send(next)
+        }
+
+        store.send(nil)
     }
 }
