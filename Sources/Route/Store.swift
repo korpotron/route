@@ -1,7 +1,7 @@
 import Combine
 
 struct Store {
-    private let subject: CurrentValueSubject<Any?, Never> = .init(nil)
+    private let subject: CurrentValueSubject<RouteLink?, Never> = .init(nil)
 
     func send(_ link: RouteLink?) {
         subject.send(link)
