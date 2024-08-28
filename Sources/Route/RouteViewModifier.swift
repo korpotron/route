@@ -1,3 +1,4 @@
+import Combine
 import SwiftUI
 
 struct RouteViewModifier<T: RouteLink>: ViewModifier {
@@ -6,9 +7,13 @@ struct RouteViewModifier<T: RouteLink>: ViewModifier {
     @Environment(\.store)
     private var store
 
+    private var publisher: AnyPublisher<T, Never> {
+        store.link(of: T.self)
+    }
+
     func body(content: Content) -> some View {
         content
-            .onReceive(store.link(of: T.self), perform: handle)
+            .onReceive(publisher, perform: handle)
     }
 
     func handle(value: T) {
