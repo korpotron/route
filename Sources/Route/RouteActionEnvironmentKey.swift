@@ -1,16 +1,9 @@
 import SwiftUI
 
-struct RouteActionEnvironmentKey: EnvironmentKey {
-    static let defaultValue = RouteAction(store: StoreEnvironmentKey.defaultValue)
+extension EnvironmentValues {
+    @Entry var store = Store()
 }
 
 public extension EnvironmentValues {
-    var route: RouteAction {
-        get {
-            self[RouteActionEnvironmentKey.self]
-        }
-        set {
-            self[RouteActionEnvironmentKey.self] = newValue
-        }
-    }
+    @Entry var route = RouteAction(store: Self.__Key_store.defaultValue)
 }
