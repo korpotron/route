@@ -1,9 +1,29 @@
 import SwiftUI
 
 extension EnvironmentValues {
-    @Entry var store = Store()
-}
+    private struct StoreKey: EnvironmentKey {
+        static let defaultValue = Store()
+    }
 
-public extension EnvironmentValues {
-    @Entry var route = RouteAction(store: Self.__Key_store.defaultValue)
+    var store: Store {
+        get {
+            self[StoreKey.self]
+        }
+        set {
+            self[StoreKey.self] = newValue
+        }
+    }
+
+    private struct RouteKey: EnvironmentKey {
+        static let defaultValue = RouteAction(store: StoreKey.defaultValue)
+    }
+
+    public var route: RouteAction {
+        get {
+            self[RouteKey.self]
+        }
+        set {
+            self[RouteKey.self] = newValue
+        }
+    }
 }
