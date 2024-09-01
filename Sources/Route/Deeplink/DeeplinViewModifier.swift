@@ -16,7 +16,7 @@ public struct DeeplinViewModifier: ViewModifier {
     }
 }
 
-extension View {
+public extension View {
     @inlinable
     func deeplink(_ mapping: @escaping (_ url: URL) -> RouteLink) -> some View {
         modifier(DeeplinViewModifier(mapping: mapping))
