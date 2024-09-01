@@ -1,4 +1,3 @@
-import Route
 import Foundation
 
 public struct InvalidDeeplinkRedirect: RouteLink {

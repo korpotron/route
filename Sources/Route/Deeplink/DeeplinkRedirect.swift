@@ -1,4 +1,4 @@
-import Route
+import Foundation
 
 public struct DeeplinkRedirect: RouteLink {
     public let result: RouteResult
