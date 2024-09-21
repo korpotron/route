@@ -18,13 +18,13 @@ struct ProductDetailsView: View {
             }
             RouteView {
                 Button("bag") {
-                    route(BagLink())
+                    route(.bag)
                 }
                 Button("bag info") {
-                    route(BagInfoLink())
+                    route(.info)
                 }
                 Button("products") {
-                    route(ProductsLink())
+                    route(.products)
                 }
             }
         }

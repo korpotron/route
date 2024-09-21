@@ -16,19 +16,19 @@ struct BagView: View {
                 Spacer()
                 RouteView {
                     Button("products") {
-                        route(ProductsLink())
+                        route(.products)
                     }
                     Button("product/1") {
-                        route(ProductDetailsLink(product: 1))
+                        route(.details(1))
                     }
                     Button("product/2") {
-                        route(ProductDetailsLink(product: 2))
+                        route(.details(2))
                     }
                     Button("product/3") {
-                        route(ProductDetailsLink(product: 3))
+                        route(.details(3))
                     }
                     Button("product/3 (redirect)") {
-                        route(ProductRedirectToDetailsLink(product: 3))
+                        route(.product(3))
                     }
                     Button("url /products") {
                         openURL(URL(string: "https://example.org/products")!)

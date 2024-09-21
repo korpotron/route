@@ -26,10 +26,10 @@ struct ExampleApp: App {
     func deeplink(path: String) -> OpenURLAction.Result {
         switch path {
         case "/products":
-            route(ProductsLink())
+            route(.products)
             return .handled
         case "/bag":
-            route(BagLink())
+            route(.bag)
             return .handled
         default:
             return .discarded

@@ -27,10 +27,10 @@ struct ProductsListView: View {
             }
             RouteView {
                 Button("bag") {
-                    route(BagLink())
+                    route(.bag)
                 }
                 Button("bag info") {
-                    route(BagInfoLink())
+                    route(.info)
                 }
                 Button("url /bag") {
                     openURL(URL(string: "https://example.org/bag")!)
