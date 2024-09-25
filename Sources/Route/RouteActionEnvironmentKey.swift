@@ -1,7 +1,8 @@
 import SwiftUI
 
 extension EnvironmentValues {
-    private struct StoreKey: EnvironmentKey {
+    private struct StoreKey: @preconcurrency EnvironmentKey {
+        @MainActor
         static let defaultValue = Store()
     }
 
@@ -14,7 +15,8 @@ extension EnvironmentValues {
         }
     }
 
-    private struct RouteKey: EnvironmentKey {
+    private struct RouteKey: @preconcurrency EnvironmentKey {
+        @MainActor
         static let defaultValue = RouteAction(store: StoreKey.defaultValue)
     }
 

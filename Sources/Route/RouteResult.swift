@@ -1,7 +1,7 @@
 import SwiftUI
 
-public struct RouteResult {
-    let value: [RouteLink]
+public struct RouteResult: Sendable {
+    let value: [any RouteLink]
 }
 
 public extension RouteResult {
