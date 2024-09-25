@@ -1,3 +1,3 @@
 import Foundation
 
-public protocol RouteLink: Sendable {}
+public protocol RouteLink {}
